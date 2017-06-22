@@ -10,11 +10,6 @@ $(function () {
         event.preventDefault();
         var num = parseInt(Math.random()*12);
         var imgPath_new = '    /static/images/404/404-'+num+'.jpg';
-       console.log('--------------');
-       console.log(imgPath.length);
-       console.log(imgPath_new.length);
-       console.log(imgPath);
-       console.log(imgPath_new);
        imgBtn.attr('src', imgPath_new);
    });
 });

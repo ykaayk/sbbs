@@ -36,7 +36,8 @@ manager.add_command('db', MigrateCommand)
 @manager.option('-d', '--desc', dest='desc')
 @manager.option('-p', '--permissions', dest='permissions')
 def create_role(name, desc, permissions):
-    role = CMSRole(name=name.decode('gbk').encode('utf8'), desc=desc.decode('gbk').encode('utf8'), permissions=permissions.decode('gbk').encode('utf8'))
+#    role = CMSRole(name=name.decode('gbk').encode('utf8'), desc=desc.decode('gbk').encode('utf8'), permissions=permissions.decode('gbk').encode('utf8'))
+    role = CMSRole(name=name.decode('utf8'), desc=desc.decode('utf8'), permissions=permissions.decode('utf8'))
     db.session.add(role)
     db.session.commit()
     print u'恭喜！角色添加成功！'
@@ -52,7 +53,8 @@ def create_cms_user(email, username, password, role):
     if user:
         print u'邮箱已经存在！'
         return
-    roleModel = CMSRole.query.filter_by(name=role.decode('gbk').encode('utf8')).first()
+#    roleModel = CMSRole.query.filter_by(name=role.decode('gbk').encode('utf8')).first()
+    roleModel = CMSRole.query.filter_by(name=role.decode('utf8')).first()
     if not roleModel:
         print u'角色不存在！'
         return

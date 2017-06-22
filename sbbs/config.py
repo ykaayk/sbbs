@@ -12,7 +12,7 @@ DB_URI = 'mysql+mysqldb://%s:%s@%s:%s/%s?charset=utf8' % (DB_USERNAME, DB_PASSWO
 
 SQLALCHEMY_DATABASE_URI = DB_URI
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-SERVER_NAME = 'yk.com:5000'
+SERVER_NAME = 'ykaayk.club'
 
 
 SECRET_KEY = os.urandom(24)

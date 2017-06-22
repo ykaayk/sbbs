@@ -17,7 +17,8 @@ from datetime import datetime
 import constants
 
 bp = Blueprint('cms', __name__, subdomain='cms')
-
+# bp = Blueprint('cms', __name__, url_prefix='/cms')
+# bp = Blueprint('cms', __name__)
 
 # CMS首页
 @bp.route('/')
